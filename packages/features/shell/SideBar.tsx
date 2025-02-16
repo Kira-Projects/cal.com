@@ -1,18 +1,17 @@
 import type { User as UserAuth } from "next-auth";
 import { useSession } from "next-auth/react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { classNames } from "@calcom/lib";
-import { IS_CALCOM, IS_VISUAL_REGRESSION_TESTING, ENABLE_PROFILE_SWITCHER } from "@calcom/lib/constants";
+import { IS_CALCOM, ENABLE_PROFILE_SWITCHER } from "@calcom/lib/constants";
 import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
 import { getBookerBaseUrlSync } from "@calcom/lib/getBookerUrl/client";
 import { useCopy } from "@calcom/lib/hooks/useCopy";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { UserPermissionRole } from "@calcom/prisma/enums";
-import { Avatar, ButtonOrLink, Credits, Icon, SkeletonText, Tooltip, Logo, showToast } from "@calcom/ui";
+import { Avatar, ButtonOrLink, Icon, SkeletonText, Tooltip, Logo, showToast } from "@calcom/ui";
 
 import { KBarTrigger } from "../kbar/Kbar";
 import { Navigation } from "./navigation/Navigation";
@@ -21,9 +20,9 @@ import { ProfileDropdown } from "./user-dropdown/ProfileDropdown";
 import { UserDropdown } from "./user-dropdown/UserDropdown";
 
 // need to import without ssr to prevent hydration errors
-const Tips = dynamic(() => import("@calcom/features/tips").then((mod) => mod.Tips), {
-  ssr: false,
-});
+// const Tips = dynamic(() => import("@calcom/features/tips").then((mod) => mod.Tips), {
+//   ssr: false,
+// });
 
 export type SideBarContainerProps = {
   bannersHeight: number;
@@ -194,7 +193,7 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
 
         {!isPlatformPages && (
           <div>
-            <Tips />
+            {/* <Tips /> */}
             {bottomNavItems.map((item, index) => (
               <Tooltip side="right" content={t(item.name)} className="lg:hidden" key={item.name}>
                 <ButtonOrLink
@@ -231,7 +230,7 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
                 </ButtonOrLink>
               </Tooltip>
             ))}
-            {!IS_VISUAL_REGRESSION_TESTING && <Credits />}
+            {/* {!IS_VISUAL_REGRESSION_TESTING && <Credits />} */}
           </div>
         )}
       </aside>
