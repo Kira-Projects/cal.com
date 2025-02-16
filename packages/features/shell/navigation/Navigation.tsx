@@ -9,9 +9,7 @@ import {
 } from "@calcom/features/ee/organizations/context/provider";
 import { KBarTrigger } from "@calcom/features/kbar/Kbar";
 import { classNames } from "@calcom/lib";
-import { Badge } from "@calcom/ui";
 
-import { TeamInviteBadge } from "../TeamInviteBadge";
 import type { NavigationItemType } from "./NavigationItem";
 import { NavigationItem, MobileNavigationItem, MobileNavigationMoreItem } from "./NavigationItem";
 
@@ -45,64 +43,64 @@ const getNavigationItems = (orgBranding: OrganizationBranding): NavigationItemTy
         } satisfies NavigationItemType,
       ]
     : []),
-  {
-    name: "teams",
-    href: "/teams",
-    icon: "users",
-    onlyDesktop: true,
-    badge: <TeamInviteBadge />,
-  },
-  {
-    name: "apps",
-    href: "/apps",
-    icon: "grid-3x3",
-    moreOnMobile: true,
-    isCurrent: ({ pathname: path, item }) => {
-      // During Server rendering path is /v2/apps but on client it becomes /apps(weird..)
-      return (path?.startsWith(item.href) ?? false) && !(path?.includes("routing-forms/") ?? false);
-    },
-    child: [
-      {
-        name: "app_store",
-        href: "/apps",
-        isCurrent: ({ pathname: path, item }) => {
-          // During Server rendering path is /v2/apps but on client it becomes /apps(weird..)
-          return (
-            (path?.startsWith(item.href) ?? false) &&
-            !(path?.includes("routing-forms/") ?? false) &&
-            !(path?.includes("/installed") ?? false)
-          );
-        },
-      },
-      {
-        name: "installed_apps",
-        href: "/apps/installed/calendar",
-        isCurrent: ({ pathname: path }) =>
-          (path?.startsWith("/apps/installed/") ?? false) ||
-          (path?.startsWith("/v2/apps/installed/") ?? false),
-      },
-    ],
-  },
-  {
-    name: MORE_SEPARATOR_NAME,
-    href: "/more",
-    icon: "ellipsis",
-  },
-  {
-    name: "routing",
-    href: "/routing",
-    icon: "split",
-    badge: <Badge variant="green">NEW</Badge>,
+  // {
+  //   name: "teams",
+  //   href: "/teams",
+  //   icon: "users",
+  //   onlyDesktop: true,
+  //   badge: <TeamInviteBadge />,
+  // },
+  // {
+  //   name: "apps",
+  //   href: "/apps",
+  //   icon: "grid-3x3",
+  //   moreOnMobile: true,
+  //   isCurrent: ({ pathname: path, item }) => {
+  //     // During Server rendering path is /v2/apps but on client it becomes /apps(weird..)
+  //     return (path?.startsWith(item.href) ?? false) && !(path?.includes("routing-forms/") ?? false);
+  //   },
+  //   child: [
+  //     {
+  //       name: "app_store",
+  //       href: "/apps",
+  //       isCurrent: ({ pathname: path, item }) => {
+  //         // During Server rendering path is /v2/apps but on client it becomes /apps(weird..)
+  //         return (
+  //           (path?.startsWith(item.href) ?? false) &&
+  //           !(path?.includes("routing-forms/") ?? false) &&
+  //           !(path?.includes("/installed") ?? false)
+  //         );
+  //       },
+  //     },
+  //     {
+  //       name: "installed_apps",
+  //       href: "/apps/installed/calendar",
+  //       isCurrent: ({ pathname: path }) =>
+  //         (path?.startsWith("/apps/installed/") ?? false) ||
+  //         (path?.startsWith("/v2/apps/installed/") ?? false),
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: MORE_SEPARATOR_NAME,
+  //   href: "/more",
+  //   icon: "ellipsis",
+  // },
+  // {
+  //   name: "routing",
+  //   href: "/routing",
+  //   icon: "split",
+  //   badge: <Badge variant="green">NEW</Badge>,
 
-    isCurrent: ({ pathname }) => pathname?.startsWith("/routing") ?? false,
-    moreOnMobile: true,
-  },
-  {
-    name: "workflows",
-    href: "/workflows",
-    icon: "zap",
-    moreOnMobile: true,
-  },
+  //   isCurrent: ({ pathname }) => pathname?.startsWith("/routing") ?? false,
+  //   moreOnMobile: true,
+  // },
+  // {
+  //   name: "workflows",
+  //   href: "/workflows",
+  //   icon: "zap",
+  //   moreOnMobile: true,
+  // },
   {
     name: "insights",
     href: "/insights",
@@ -115,16 +113,16 @@ const getNavigationItems = (orgBranding: OrganizationBranding): NavigationItemTy
         href: "/insights",
         isCurrent: ({ pathname: path }) => path == "/insights" ?? false,
       },
-      {
-        name: "routing",
-        href: "/insights/routing",
-        isCurrent: ({ pathname: path }) => path?.startsWith("/insights/routing") ?? false,
-      },
-      {
-        name: "router_position",
-        href: "/insights/virtual-queues",
-        isCurrent: ({ pathname: path }) => path?.startsWith("/insights/virtual-queues") ?? false,
-      },
+      // {
+      //   name: "routing",
+      //   href: "/insights/routing",
+      //   isCurrent: ({ pathname: path }) => path?.startsWith("/insights/routing") ?? false,
+      // },
+      // {
+      //   name: "router_position",
+      //   href: "/insights/virtual-queues",
+      //   isCurrent: ({ pathname: path }) => path?.startsWith("/insights/virtual-queues") ?? false,
+      // },
     ],
   },
 ];
