@@ -3,7 +3,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { classNames } from "@calcom/lib";
-import { ROADMAP, DESKTOP_APP_LINK } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import useMeQuery from "@calcom/trpc/react/hooks/useMeQuery";
 import {
@@ -55,12 +54,12 @@ export function UserDropdown({ small }: UserDropdownProps) {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleHelpClick = () => {
-    if (window.Plain) {
-      window.Plain.open();
-    }
-    setMenuOpen(false);
-  };
+  // const handleHelpClick = () => {
+  //   if (window.Plain) {
+  //     window.Plain.open();
+  //   }
+  //   setMenuOpen(false);
+  // };
 
   // Prevent rendering dropdown if user isn't available.
   // We don't want to show nameless user.
@@ -157,7 +156,7 @@ export function UserDropdown({ small }: UserDropdownProps) {
                 </>
               )}
 
-              <DropdownMenuItem>
+              {/* <DropdownMenuItem>
                 <DropdownItem StartIcon="map" target="_blank" href={ROADMAP}>
                   {t("visit_roadmap")}
                 </DropdownItem>
@@ -177,7 +176,7 @@ export function UserDropdown({ small }: UserDropdownProps) {
                     {t("download_desktop_app")}
                   </DropdownItem>
                 </DropdownMenuItem>
-              )}
+              )} */}
 
               {!isPlatformPages && isPlatformUser && (
                 <DropdownMenuItem className="todesktop:hidden hidden lg:flex">
