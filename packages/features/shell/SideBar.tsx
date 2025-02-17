@@ -13,7 +13,7 @@ import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { UserPermissionRole } from "@calcom/prisma/enums";
 import { Avatar, ButtonOrLink, Icon, SkeletonText, Tooltip, Logo, showToast } from "@calcom/ui";
 
-import { KBarTrigger } from "../kbar/Kbar";
+// import { KBarTrigger } from "../kbar/Kbar";
 import { Navigation } from "./navigation/Navigation";
 import { type NavigationItemType } from "./navigation/NavigationItem";
 import { ProfileDropdown } from "./user-dropdown/ProfileDropdown";
@@ -181,7 +181,8 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
                   <UserDropdown small />
                 </div>
               )}
-              <KBarTrigger />
+              {/* Comentamos el buscador */}
+              {/* <KBarTrigger /> */}
             </div>
           </header>
           {/* logo icon for tablet */}
