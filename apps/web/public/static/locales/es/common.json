@@ -1,4 +1,5 @@
 {
+  "pick_a_date": "Escoge una fecha",
   "identity_provider": "Proveedor de identidad",
   "trial_days_left": "Tienes $t(day, {\"count\": {{days}} }) restantes en tu prueba PRO",
   "day_one": "{{count}} día",
