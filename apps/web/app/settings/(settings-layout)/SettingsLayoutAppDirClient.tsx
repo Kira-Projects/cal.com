@@ -31,8 +31,8 @@ const getTabs = (orgBranding: OrganizationBranding | null) => {
       children: [
         { name: "profile", href: "/settings/my-account/profile" },
         { name: "general", href: "/settings/my-account/general" },
-        { name: "calendars", href: "/settings/my-account/calendars" },
-        { name: "conferencing", href: "/settings/my-account/conferencing" },
+        // { name: "calendars", href: "/settings/my-account/calendars" },
+        // { name: "conferencing", href: "/settings/my-account/conferencing" },
         { name: "appearance", href: "/settings/my-account/appearance" },
         { name: "out_of_office", href: "/settings/my-account/out-of-office" },
         // TODO
@@ -45,15 +45,15 @@ const getTabs = (orgBranding: OrganizationBranding | null) => {
       icon: "key",
       children: [
         { name: "password", href: "/settings/security/password" },
-        { name: "impersonation", href: "/settings/security/impersonation" },
-        { name: "2fa_auth", href: "/settings/security/two-factor-auth" },
+        // { name: "impersonation", href: "/settings/security/impersonation" },
+        // { name: "2fa_auth", href: "/settings/security/two-factor-auth" },
       ],
     },
     {
       name: "billing",
       href: "/settings/billing",
       icon: "credit-card",
-      children: [{ name: "manage_billing", href: "/settings/billing" }],
+      // children: [{ name: "manage_billing", href: "/settings/billing" }],
     },
     {
       name: "developer",
@@ -61,9 +61,9 @@ const getTabs = (orgBranding: OrganizationBranding | null) => {
       icon: "terminal",
       children: [
         //
-        { name: "webhooks", href: "/settings/developer/webhooks" },
-        { name: "api_keys", href: "/settings/developer/api-keys" },
-        { name: "admin_api", href: "/settings/organizations/admin-api" },
+        // { name: "webhooks", href: "/settings/developer/webhooks" },
+        // { name: "api_keys", href: "/settings/developer/api-keys" },
+        // { name: "admin_api", href: "/settings/organizations/admin-api" },
         // TODO: Add profile level for embeds
         // { name: "embeds", href: "/v2/settings/developer/embeds" },
       ],
@@ -148,7 +148,8 @@ const getTabs = (orgBranding: OrganizationBranding | null) => {
 
   tabs.find((tab) => {
     if (tab.name === "security" && !HOSTED_CAL_FEATURES) {
-      tab.children?.push({ name: "sso_configuration", href: "/settings/security/sso" });
+      // Comentamos todo el bloque relacionado con SSO y directory sync
+      // tab.children?.push({ name: "sso_configuration", href: "/settings/security/sso" });
       // TODO: Enable dsync for self hosters
       // tab.children?.push({ name: "directory_sync", href: "/settings/security/dsync" });
     }

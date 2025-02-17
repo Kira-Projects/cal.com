@@ -46,12 +46,10 @@ import {
   DropdownMenuTrigger,
   EmptyScreen,
   HorizontalTabs,
-  Icon,
   Label,
   showToast,
   Skeleton,
   Switch,
-  TextField,
   Tooltip,
   ArrowButton,
   UserAvatarGroup,
@@ -119,6 +117,7 @@ const InfiniteTeamsTab: FC<InfiniteTeamsTabProps> = (props) => {
 
   return (
     <div>
+      {/*
       <TextField
         className="max-w-64"
         addOnLeading={<Icon name="search" className="text-subtle h-4 w-4" />}
@@ -131,6 +130,7 @@ const InfiniteTeamsTab: FC<InfiniteTeamsTabProps> = (props) => {
         }}
         placeholder={t("search")}
       />
+      */}
       {!!activeEventTypeGroup && (
         <InfiniteEventTypeList
           pages={query?.data?.pages}
