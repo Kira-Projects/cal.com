@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import * as React from "react";
 
 import { classNames as cn } from "@calcom/lib";
+import { useLocale } from "@calcom/lib/hooks/useLocale";
 
 import { Button } from "../../button";
 import { Calendar } from "./Calendar";
@@ -27,6 +28,8 @@ export function DatePickerWithRange({
   disabled,
   withoutPopover,
 }: React.HTMLAttributes<HTMLDivElement> & DatePickerWithRangeProps) {
+  const { t } = useLocale();
+
   function handleDayClick(date: Date) {
     if (dates?.endDate) {
       onDatesChange({ startDate: date, endDate: undefined });
@@ -75,7 +78,7 @@ export function DatePickerWithRange({
                 <>{format(dates.startDate, "LLL dd, y")} - End</>
               )
             ) : (
-              <span>Pick a date</span>
+              <span>{t("pick_a_date")}</span>
             )}
           </Button>
         </Popover.Trigger>

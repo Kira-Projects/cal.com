@@ -505,7 +505,7 @@ export function AvailabilitySettings({
                           }
                         />
                       </div>
-                      {!isPlatform && (
+                      {/* {!isPlatform && (
                         <>
                           <hr className="border-subtle my-7" />
                           <div className="rounded-md md:block">
@@ -526,7 +526,7 @@ export function AvailabilitySettings({
                             </div>
                           </div>
                         </>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -620,7 +620,7 @@ export function AvailabilitySettings({
                   }
                 />
               </div>
-              {isPlatform ? (
+              {/* {isPlatform ? (
                 <></>
               ) : (
                 <>
@@ -643,7 +643,7 @@ export function AvailabilitySettings({
                     </div>
                   </div>
                 </>
-              )}
+              )} */}
             </div>
           </div>
         </Form>
