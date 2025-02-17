@@ -7,7 +7,7 @@ import {
   useOrgBranding,
   type OrganizationBranding,
 } from "@calcom/features/ee/organizations/context/provider";
-import { KBarTrigger } from "@calcom/features/kbar/Kbar";
+// import { KBarTrigger } from "@calcom/features/kbar/Kbar";
 import { classNames } from "@calcom/lib";
 
 import type { NavigationItemType } from "./NavigationItem";
@@ -202,9 +202,9 @@ export const Navigation = ({ isPlatformNavigation = false }: { isPlatformNavigat
       {desktopNavigationItems.map((item) => (
         <NavigationItem key={item.name} item={item} />
       ))}
-      <div className="text-subtle mt-0.5 lg:hidden">
+      {/* <div className="text-subtle mt-0.5 lg:hidden">
         <KBarTrigger />
-      </div>
+      </div> */}
     </nav>
   );
 };
