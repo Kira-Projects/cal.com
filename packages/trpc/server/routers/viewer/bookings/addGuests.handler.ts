@@ -111,14 +111,14 @@ export const addGuestsHandler = async ({ ctx, input }: AddGuestsOptions) => {
       email: attendee.email,
       timeZone: attendee.timeZone,
       language: {
-        translate: await getTranslation(attendee.locale ?? "en", "common"),
-        locale: attendee.locale ?? "en",
+        translate: await getTranslation(attendee.locale ?? "es", "common"),
+        locale: attendee.locale ?? "es",
       },
     };
   });
 
   const attendeesList = await Promise.all(attendeesListPromises);
-  const tOrganizer = await getTranslation(organizer.locale ?? "en", "common");
+  const tOrganizer = await getTranslation(organizer.locale ?? "es", "common");
   const videoCallReference = booking.references.find((reference) => reference.type.includes("_video"));
 
   const evt: CalendarEvent = {
@@ -131,7 +131,7 @@ export const addGuestsHandler = async ({ ctx, input }: AddGuestsOptions) => {
       email: booking?.userPrimaryEmail ?? organizer.email,
       name: organizer.name ?? "Nameless",
       timeZone: organizer.timeZone,
-      language: { translate: tOrganizer, locale: organizer.locale ?? "en" },
+      language: { translate: tOrganizer, locale: organizer.locale ?? "es" },
     },
     attendees: attendeesList,
     uid: booking.uid,

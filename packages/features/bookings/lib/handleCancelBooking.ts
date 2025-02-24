@@ -266,8 +266,8 @@ async function handler(req: CustomRequest) {
       timeZone: attendee.timeZone,
       phoneNumber: attendee.phoneNumber,
       language: {
-        translate: await getTranslation(attendee.locale ?? "en", "common"),
-        locale: attendee.locale ?? "en",
+        translate: await getTranslation(attendee.locale ?? "es", "common"),
+        locale: attendee.locale ?? "es",
       },
     };
 
@@ -288,7 +288,7 @@ async function handler(req: CustomRequest) {
 
   const attendeesList = await Promise.all(attendeesListPromises);
   const teamMembers = await Promise.all(teamMembersPromises);
-  const tOrganizer = await getTranslation(organizer.locale ?? "en", "common");
+  const tOrganizer = await getTranslation(organizer.locale ?? "es", "common");
 
   const ownerProfile = await prisma.profile.findFirst({
     where: {
@@ -321,7 +321,7 @@ async function handler(req: CustomRequest) {
       name: organizer.name ?? "Nameless",
       timeZone: organizer.timeZone,
       timeFormat: getTimeFormatStringFromUserTimeFormat(organizer.timeFormat),
-      language: { translate: tOrganizer, locale: organizer.locale ?? "en" },
+      language: { translate: tOrganizer, locale: organizer.locale ?? "es" },
     },
     attendees: attendeesList,
     uid: bookingToDelete?.uid,

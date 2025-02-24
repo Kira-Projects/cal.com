@@ -29,7 +29,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
       error: null,
       migrated: null,
       userId: session.user.id,
-      ...(await serverSideTranslations(ctx.locale || "en", ["common"])),
+      ...(await serverSideTranslations(ctx.locale || "es", ["common"])),
       username: session.user.username,
     },
   };

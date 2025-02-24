@@ -35,7 +35,7 @@ const createI18nInstance = async (locale: string, ns: string) => {
 };
 
 const getTranslationWithCache = async (locale: string, ns = "common") => {
-  const localeWithFallback = locale ?? "en";
+  const localeWithFallback = locale ?? "es";
   const i18n = await createI18nInstance(localeWithFallback, ns);
   return i18n.getFixedT(localeWithFallback, ns);
 };
@@ -45,7 +45,7 @@ export const getTranslate = async () => {
   // If "x-locale" does not exist in header,
   // ensure that config.matcher in middleware includes the page you are testing
   const locale = headersList.get("x-locale");
-  const t = await getTranslationWithCache(locale ?? "en");
+  const t = await getTranslationWithCache(locale ?? "es");
   return t;
 };
 
@@ -58,7 +58,7 @@ const _generateMetadataWithoutImage = async (
   const h = headers();
   const pathname = h.get("x-pathname") ?? "";
   const canonical = buildCanonical({ path: pathname, origin: origin ?? CAL_URL });
-  const locale = h.get("x-locale") ?? "en";
+  const locale = h.get("x-locale") ?? "es";
   const t = await getTranslationWithCache(locale);
 
   const title = getTitle(t);

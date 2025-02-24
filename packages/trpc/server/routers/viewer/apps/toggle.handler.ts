@@ -80,7 +80,7 @@ export const toggleHandler = async ({ input, ctx }: ToggleOptions) => {
           // No need to continue if credential does not have a user
           if (!credential.user || !credential.user.email) return;
 
-          const locale = credential.user.locale ?? "en";
+          const locale = credential.user.locale ?? "es";
           let t = translations.get(locale);
 
           if (!t) {
@@ -144,7 +144,7 @@ export const toggleHandler = async ({ input, ctx }: ToggleOptions) => {
 
           return Promise.all(
             eventType.users.map(async (user) => {
-              const locale = user.locale ?? "en";
+              const locale = user.locale ?? "es";
               let t = translations.get(locale);
 
               if (!t) {

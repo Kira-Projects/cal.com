@@ -21,7 +21,7 @@ const attendeeRescheduleSeatedBooking = async (
   const { tAttendees, bookingSeat, bookerEmail, evt, eventType } = rescheduleSeatedBookingObject;
   let { originalRescheduledBooking } = rescheduleSeatedBookingObject;
 
-  seatAttendee["language"] = { translate: tAttendees, locale: bookingSeat?.attendee.locale ?? "en" };
+  seatAttendee["language"] = { translate: tAttendees, locale: bookingSeat?.attendee.locale ?? "es" };
 
   // Update the original calendar event by removing the attendee that is rescheduling
   if (originalBookingEvt && originalRescheduledBooking) {
@@ -78,12 +78,12 @@ const attendeeRescheduleSeatedBooking = async (
   }
   // Add the new attendees to the new time slot booking attendees
   for (const attendee of newTimeSlotBooking.attendees) {
-    const translate = await getTranslation(attendee.locale ?? "en", "common");
+    const translate = await getTranslation(attendee.locale ?? "es", "common");
     evt.attendees.push({
       email: attendee.email,
       name: attendee.name,
       timeZone: attendee.timeZone,
-      language: { translate, locale: attendee.locale ?? "en" },
+      language: { translate, locale: attendee.locale ?? "es" },
     });
   }
 

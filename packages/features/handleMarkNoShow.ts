@@ -90,7 +90,7 @@ const handleMarkNoShow = async ({
   platformClientParams?: PlatformClientParams;
 }) => {
   const responsePayload = new ResponsePayload();
-  const t = await getTranslation(locale ?? "en", "common");
+  const t = await getTranslation(locale ?? "es", "common");
 
   try {
     const attendeeEmails = attendees?.map((attendee) => attendee.email) || [];

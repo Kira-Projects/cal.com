@@ -185,7 +185,7 @@ export const createHandler = async ({ input, ctx }: CreateOptions) => {
 
   const isOrganizationConfigured = isPlatform ? true : await createDomain(slug);
   const loggedInUserTranslation = await getTranslation(ctx.user.locale, "common");
-  const inputLanguageTranslation = await getTranslation(input.language ?? "en", "common");
+  const inputLanguageTranslation = await getTranslation(input.language ?? "es", "common");
 
   if (!isOrganizationConfigured) {
     // Otherwise, we proceed to send an administrative email to admins regarding
@@ -237,7 +237,7 @@ export const createHandler = async ({ input, ctx }: CreateOptions) => {
 
     const { organization, ownerProfile } = data;
 
-    const translation = await getTranslation(input.language ?? "en", "common");
+    const translation = await getTranslation(input.language ?? "es", "common");
 
     await sendEmailVerification({
       email: orgOwnerEmail,

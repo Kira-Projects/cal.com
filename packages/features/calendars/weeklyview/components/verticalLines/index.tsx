@@ -2,7 +2,7 @@ import type dayjs from "@calcom/dayjs";
 
 export const VerticalLines = ({ days }: { days: dayjs.Dayjs[] }) => {
   const isRTL = () => {
-    let userLanguage = "en"; // Default to 'en' if navigator is not defined
+    let userLanguage = "es"; // Default to 'en' if navigator is not defined
 
     if (typeof window !== "undefined" && typeof navigator !== "undefined") {
       const userLocale = navigator.language;

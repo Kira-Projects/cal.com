@@ -52,26 +52,26 @@ export async function getTeamMembers({
     })
     .map(async (host) => {
       const user = host.user;
-      const tTeamMember = await getTranslation(user.locale ?? "en", "common");
+      const tTeamMember = await getTranslation(user.locale ?? "es", "common");
       return {
         id: user.id,
         email: user.email,
         name: user.name || "",
         timeZone: user.timeZone,
-        language: { translate: tTeamMember, locale: user.locale ?? "en" },
+        language: { translate: tTeamMember, locale: user.locale ?? "es" },
       };
     });
 
   const teamMembers = await Promise.all(teamMemberPromises);
 
   if (reassignedHost.email !== organizer.email) {
-    const tReassignedHost = await getTranslation(reassignedHost.locale ?? "en", "common");
+    const tReassignedHost = await getTranslation(reassignedHost.locale ?? "es", "common");
     teamMembers.push({
       id: reassignedHost.id,
       email: reassignedHost.email,
       name: reassignedHost.name || "",
       timeZone: reassignedHost.timeZone,
-      language: { translate: tReassignedHost, locale: reassignedHost.locale ?? "en" },
+      language: { translate: tReassignedHost, locale: reassignedHost.locale ?? "es" },
     });
   }
 

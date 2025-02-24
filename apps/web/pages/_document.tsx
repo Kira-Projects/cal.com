@@ -34,7 +34,7 @@ class MyDocument extends Document<Props> {
       ctx.req && getLocaleModule
         ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
           await getLocaleModule.getLocale(ctx.req as IncomingMessage & { cookies: Record<string, any> })
-        : "en";
+        : "es";
 
     const asPath = ctx.asPath || "";
     // Use a dummy URL as default so that URL parsing works for relative URLs as well. We care about searchParams and pathname only
@@ -51,7 +51,7 @@ class MyDocument extends Document<Props> {
 
   render() {
     const { isEmbed, embedColorScheme } = this.props;
-    const newLocale = this.props.newLocale || "en";
+    const newLocale = this.props.newLocale || "es";
     const newDir = dir(newLocale);
 
     const nonceParsed = z.string().safeParse(this.props.nonce);

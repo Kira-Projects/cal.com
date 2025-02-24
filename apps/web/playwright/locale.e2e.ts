@@ -276,7 +276,7 @@ test.describe("authorized user sees correct translations (de)", async () => {
 
 test.describe("authorized user sees correct translations (pt-br)", async () => {
   test.use({
-    locale: "en",
+    locale: es,
   });
 
   test("should return correct translations and html attributes", async ({ page, users }) => {
@@ -348,7 +348,7 @@ test.describe("authorized user sees correct translations (pt-br)", async () => {
 
 test.describe("authorized user sees correct translations (ar)", async () => {
   test.use({
-    locale: "en",
+    locale: es,
   });
 
   test("should return correct translations and html attributes", async ({ page, users }) => {
@@ -420,7 +420,7 @@ test.describe("authorized user sees correct translations (ar)", async () => {
 
 test.describe("authorized user sees changed translations (de->ar)", async () => {
   test.use({
-    locale: "en",
+    locale: es,
   });
 
   test("should return correct translations and html attributes", async ({ page, users }) => {
@@ -483,7 +483,7 @@ test.describe("authorized user sees changed translations (de->ar)", async () => 
 
 test.describe("authorized user sees changed translations (de->pt-BR) [locale1]", async () => {
   test.use({
-    locale: "en",
+    locale: es,
   });
 
   test("should return correct translations and html attributes", async ({ page, users }) => {

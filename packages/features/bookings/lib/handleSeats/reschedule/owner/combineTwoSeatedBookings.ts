@@ -112,7 +112,7 @@ const combineTwoSeatedBookings = async (
   const updatedBookingAttendees = updatedNewBooking.attendees.map((attendee) => {
     const evtAttendee = {
       ...attendee,
-      language: { translate: tAttendees, locale: attendeeLanguage ?? "en" },
+      language: { translate: tAttendees, locale: attendeeLanguage ?? "es" },
     };
     return evtAttendee;
   });

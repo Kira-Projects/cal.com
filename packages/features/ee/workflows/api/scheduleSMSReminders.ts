@@ -155,14 +155,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         const customMessage = customTemplate(
           reminder.workflowStep.reminderBody || "",
           variables,
-          locale || "en",
+          locale || "es",
           getTimeFormatStringFromUserTimeFormat(reminder.booking.user?.timeFormat)
         );
         message = customMessage.text;
       } else if (reminder.workflowStep.template === WorkflowTemplates.REMINDER) {
         message = smsReminderTemplate(
           false,
-          reminder.booking.user?.locale || "en",
+          reminder.booking.user?.locale || "es",
           reminder.workflowStep.action,
           getTimeFormatStringFromUserTimeFormat(reminder.booking.user?.timeFormat),
           reminder.booking?.startTime.toISOString() || "",
