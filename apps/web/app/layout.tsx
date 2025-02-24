@@ -33,12 +33,11 @@ const getInitialProps = async (url: string) => {
   const req = { headers: headers(), cookies: cookies() };
   const newLocale = await getLocale(req);
   const direction = dir(newLocale);
-
   return { isEmbed, embedColorScheme, locale: newLocale, direction };
 };
 
 const getFallbackProps = () => ({
-  locale: "en",
+  locale: "es",
   direction: "ltr",
   isEmbed: false,
   embedColorScheme: false,

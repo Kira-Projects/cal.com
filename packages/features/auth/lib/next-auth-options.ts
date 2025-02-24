@@ -476,7 +476,7 @@ export const getOptions = ({
           ...token,
           profileId: session?.profileId ?? token.profileId ?? null,
           upId: session?.upId ?? token.upId ?? null,
-          locale: session?.locale ?? token.locale ?? "en",
+          locale: session?.locale ?? token.locale ?? "es",
           name: session?.name ?? token.name,
           username: session?.username ?? token.username,
           email: session?.email ?? token.email,

@@ -307,14 +307,14 @@ const handleDeleteCredential = async ({
                 email: attendee.email,
                 timeZone: attendee.timeZone,
                 language: {
-                  translate: await getTranslation(attendee.locale ?? "en", "common"),
-                  locale: attendee.locale ?? "en",
+                  translate: await getTranslation(attendee.locale ?? "es", "common"),
+                  locale: attendee.locale ?? "es",
                 },
               };
             });
 
             const attendeesList = await Promise.all(attendeesListPromises);
-            const tOrganizer = await getTranslation(booking?.user?.locale ?? "en", "common");
+            const tOrganizer = await getTranslation(booking?.user?.locale ?? "es", "common");
             await sendCancelledEmailsAndSMS(
               {
                 type: booking?.eventType?.title as string,
@@ -331,7 +331,7 @@ const handleDeleteCredential = async ({
                   email: booking?.userPrimaryEmail ?? (booking?.user?.email as string),
                   name: booking?.user?.name ?? "Nameless",
                   timeZone: booking?.user?.timeZone as string,
-                  language: { translate: tOrganizer, locale: booking?.user?.locale ?? "en" },
+                  language: { translate: tOrganizer, locale: booking?.user?.locale ?? "es" },
                 },
                 attendees: attendeesList,
                 uid: booking.uid,

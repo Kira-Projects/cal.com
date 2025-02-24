@@ -416,8 +416,8 @@ async function handler(
   }
 
   const fullName = getFullName(bookerName);
-  // Why are we only using "en" locale
-  const tGuests = await getTranslation("en", "common");
+  // Why are we only using es locale
+  const tGuests = await getTranslation("es", "common");
 
   const dynamicUserList = Array.isArray(reqBody.user) ? reqBody.user : getUsernameList(reqBody.user);
   if (!eventType) throw new HttpError({ statusCode: 404, message: "event_type_not_found" });
@@ -764,7 +764,7 @@ async function handler(
     ? users.find((user) => user.email === reqBody.teamMemberEmail) ?? users[0]
     : users[0];
 
-  const tOrganizer = await getTranslation(organizerUser?.locale ?? "en", "common");
+  const tOrganizer = await getTranslation(organizerUser?.locale ?? "es", "common");
   const allCredentials = await getAllCredentials(organizerUser, eventType);
 
   const { userReschedulingIsOwner, isConfirmedByDefault } = await getRequiresConfirmationFlags({
@@ -785,7 +785,7 @@ async function handler(
   const attendeeLanguage = attendeeInfoOnReschedule ? attendeeInfoOnReschedule.locale : language;
   const attendeeTimezone = attendeeInfoOnReschedule ? attendeeInfoOnReschedule.timeZone : reqBody.timeZone;
 
-  const tAttendees = await getTranslation(attendeeLanguage ?? "en", "common");
+  const tAttendees = await getTranslation(attendeeLanguage ?? "es", "common");
 
   const isManagedEventType = !!eventType.parentId;
 
@@ -822,7 +822,7 @@ async function handler(
       firstName: (typeof bookerName === "object" && bookerName.firstName) || "",
       lastName: (typeof bookerName === "object" && bookerName.lastName) || "",
       timeZone: attendeeTimezone,
-      language: { translate: tAttendees, locale: attendeeLanguage ?? "en" },
+      language: { translate: tAttendees, locale: attendeeLanguage ?? "es" },
     },
   ];
 
@@ -847,7 +847,7 @@ async function handler(
       firstName: "",
       lastName: "",
       timeZone: attendeeTimezone,
-      language: { translate: tGuests, locale: "en" },
+      language: { translate: tGuests, locale: "es" },
     });
     return guestArray;
   }, [] as Invitee);
@@ -892,8 +892,8 @@ async function handler(
         lastName: "",
         timeZone: user.timeZone,
         language: {
-          translate: await getTranslation(user.locale ?? "en", "common"),
-          locale: user.locale ?? "en",
+          translate: await getTranslation(user.locale ?? "es", "common"),
+          locale: user.locale ?? "es",
         },
       };
     });
@@ -972,7 +972,7 @@ async function handler(
       email: organizerEmail,
       username: organizerUser.username || undefined,
       timeZone: organizerUser.timeZone,
-      language: { translate: tOrganizer, locale: organizerUser.locale ?? "en" },
+      language: { translate: tOrganizer, locale: organizerUser.locale ?? "es" },
       timeFormat: getTimeFormatStringFromUserTimeFormat(organizerUser.timeFormat),
     },
     responses: reqBody.calEventResponses || null,
@@ -1464,21 +1464,21 @@ async function handler(
         const originalBookingMemberEmails: Person[] = [];
 
         for (const user of originalRescheduledBooking.attendees) {
-          const translate = await getTranslation(user.locale ?? "en", "common");
+          const translate = await getTranslation(user.locale ?? "es", "common");
           originalBookingMemberEmails.push({
             name: user.name,
             email: user.email,
             timeZone: user.timeZone,
             phoneNumber: user.phoneNumber,
-            language: { translate, locale: user.locale ?? "en" },
+            language: { translate, locale: user.locale ?? "es" },
           });
         }
         if (originalRescheduledBooking.user) {
-          const translate = await getTranslation(originalRescheduledBooking.user.locale ?? "en", "common");
+          const translate = await getTranslation(originalRescheduledBooking.user.locale ?? "es", "common");
           originalBookingMemberEmails.push({
             ...originalRescheduledBooking.user,
             name: originalRescheduledBooking.user.name || "",
-            language: { translate, locale: originalRescheduledBooking.user.locale ?? "en" },
+            language: { translate, locale: originalRescheduledBooking.user.locale ?? "es" },
           });
         }
 

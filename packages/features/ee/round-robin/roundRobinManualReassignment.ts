@@ -114,8 +114,8 @@ export const roundRobinManualReassignment = async ({
   const hasOrganizerChanged = !fixedHost && booking.userId !== newUserId;
 
   const newUser = newUserHost.user;
-  const newUserT = await getTranslation(newUser.locale || "en", "common");
-  const originalOrganizerT = await getTranslation(originalOrganizer.locale || "en", "common");
+  const newUserT = await getTranslation(newUser.locale || "es", "common");
+  const originalOrganizerT = await getTranslation(originalOrganizer.locale || "es", "common");
 
   const roundRobinHosts = eventType.hosts.filter((host) => !host.isFixed);
 
@@ -133,7 +133,7 @@ export const roundRobinManualReassignment = async ({
     }
   })();
 
-  const previousRRHostT = await getTranslation(previousRRHost?.locale || "en", "common");
+  const previousRRHostT = await getTranslation(previousRRHost?.locale || "es", "common");
   let bookingLocation = booking.location;
 
   if (hasOrganizerChanged) {
@@ -207,7 +207,7 @@ export const roundRobinManualReassignment = async ({
 
   const organizer = hasOrganizerChanged ? newUser : booking.user ?? newUser;
 
-  const organizerT = await getTranslation(organizer?.locale || "en", "common");
+  const organizerT = await getTranslation(organizer?.locale || "es", "common");
 
   const teamMembers = await getTeamMembers({
     eventTypeHosts,
@@ -228,11 +228,11 @@ export const roundRobinManualReassignment = async ({
     }
 
     attendeePromises.push(
-      getTranslation(attendee.locale ?? "en", "common").then((tAttendee) => ({
+      getTranslation(attendee.locale ?? "es", "common").then((tAttendee) => ({
         email: attendee.email,
         name: attendee.name,
         timeZone: attendee.timeZone,
-        language: { translate: tAttendee, locale: attendee.locale ?? "en" },
+        language: { translate: tAttendee, locale: attendee.locale ?? "es" },
         phoneNumber: attendee.phoneNumber || undefined,
       }))
     );
@@ -250,7 +250,7 @@ export const roundRobinManualReassignment = async ({
       email: organizer.email,
       name: organizer.name || "",
       timeZone: organizer.timeZone,
-      language: { translate: organizerT, locale: organizer.locale || "en" },
+      language: { translate: organizerT, locale: organizer.locale || "es" },
     },
     attendees: attendeeList,
     uid: booking.uid,
@@ -307,7 +307,7 @@ export const roundRobinManualReassignment = async ({
           name: newUser.name || "",
           username: newUser.username || "",
           timeFormat: getTimeFormatStringFromUserTimeFormat(newUser.timeFormat),
-          language: { translate: newUserT, locale: newUser.locale || "en" },
+          language: { translate: newUserT, locale: newUser.locale || "es" },
         },
       ],
       reassigned: {
@@ -325,7 +325,7 @@ export const roundRobinManualReassignment = async ({
     email: originalOrganizer.email,
     name: originalOrganizer.name || "",
     timeZone: originalOrganizer.timeZone,
-    language: { translate: originalOrganizerT, locale: originalOrganizer.locale || "en" },
+    language: { translate: originalOrganizerT, locale: originalOrganizer.locale || "es" },
   };
 
   if (previousRRHost && emailsEnabled) {
@@ -337,7 +337,7 @@ export const roundRobinManualReassignment = async ({
           name: previousRRHost.name || "",
           username: previousRRHost.username || "",
           timeFormat: getTimeFormatStringFromUserTimeFormat(previousRRHost.timeFormat),
-          language: { translate: previousRRHostT, locale: previousRRHost.locale || "en" },
+          language: { translate: previousRRHostT, locale: previousRRHost.locale || "es" },
         },
       ],
       eventType?.metadata as EventTypeMetadata,

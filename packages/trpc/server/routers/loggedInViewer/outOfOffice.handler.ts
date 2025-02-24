@@ -206,7 +206,7 @@ export const outOfOfficeCreateOrUpdate = async ({ ctx, input }: TBookingRedirect
         username: true,
       },
     });
-    const t = await getTranslation(ctx.user.locale ?? "en", "common");
+    const t = await getTranslation(ctx.user.locale ?? "es", "common");
     const formattedStartDate = new Intl.DateTimeFormat("en-US").format(createdOrUpdatedOutOfOffice.start);
     const formattedEndDate = new Intl.DateTimeFormat("en-US").format(createdOrUpdatedOutOfOffice.end);
 
@@ -381,7 +381,7 @@ export const outOfOfficeEntryDelete = async ({ ctx, input }: TBookingRedirectDel
     return {};
   }
 
-  const t = await getTranslation(ctx.user.locale ?? "en", "common");
+  const t = await getTranslation(ctx.user.locale ?? "es", "common");
 
   const formattedStartDate = new Intl.DateTimeFormat("en-US").format(deletedOutOfOfficeEntry.start);
   const formattedEndDate = new Intl.DateTimeFormat("en-US").format(deletedOutOfOfficeEntry.end);

@@ -51,16 +51,16 @@ const buildCalendarEvent: (bookingUid: string) => Promise<CalendarEvent> = async
     throw new Error(`event type not found for booking ${bookingUid}`);
   }
 
-  const organizerT = await getTranslation(booking.user?.locale ?? "en", "common");
+  const organizerT = await getTranslation(booking.user?.locale ?? "es", "common");
 
   const attendeePromises = [];
   for (const attendee of booking.attendees) {
     attendeePromises.push(
-      getTranslation(attendee.locale ?? "en", "common").then((tAttendee) => ({
+      getTranslation(attendee.locale ?? "es", "common").then((tAttendee) => ({
         email: attendee.email,
         name: attendee.name,
         timeZone: attendee.timeZone,
-        language: { translate: tAttendee, locale: attendee.locale ?? "en" },
+        language: { translate: tAttendee, locale: attendee.locale ?? "es" },
         phoneNumber: attendee.phoneNumber || undefined,
       }))
     );
@@ -78,7 +78,7 @@ const buildCalendarEvent: (bookingUid: string) => Promise<CalendarEvent> = async
       email: booking.user.email,
       name: booking.user.name || "Nameless",
       username: booking.user?.username || "No username",
-      language: { translate: organizerT, locale: booking.user?.locale ?? "en" },
+      language: { translate: organizerT, locale: booking.user?.locale ?? "es" },
       timeZone: booking.user.timeZone,
     },
     attendees: attendeeList,

@@ -12,7 +12,7 @@ type TestTriggerOptions = {
 
 export const testTriggerHandler = async ({ ctx: _ctx, input }: TestTriggerOptions) => {
   const { url, type, payloadTemplate = null, secret = null } = input;
-  const translation = await getTranslation("en", "common");
+  const translation = await getTranslation("es", "common");
   const language = {
     locale: "en",
     translate: translation,

@@ -225,9 +225,9 @@ export const scheduleEmailReminder = async (args: scheduleEmailReminderArgs) => 
     const status: EventStatus =
       triggerEvent === WorkflowTriggerEvents.EVENT_CANCELLED ? "CANCELLED" : "CONFIRMED";
 
-    const organizerT = await getTranslation(evt.organizer.language.locale || "en", "common");
+    const organizerT = await getTranslation(evt.organizer.language.locale || "es", "common");
 
-    const attendeeT = await getTranslation(evt.attendees[0].language.locale || "en", "common");
+    const attendeeT = await getTranslation(evt.attendees[0].language.locale || "es", "common");
 
     const attendee = {
       ...evt.attendees[0],

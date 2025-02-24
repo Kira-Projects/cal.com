@@ -69,7 +69,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Response>) {
       ...ctx,
       req,
       res,
-      user: { ...user, locale: user?.locale ?? "en" },
+      user: { ...user, locale: user?.locale ?? "es" },
     });
     await caller.confirm({
       bookingId: booking.id,

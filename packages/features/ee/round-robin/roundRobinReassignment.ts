@@ -113,7 +113,7 @@ export const roundRobinReassignment = async ({
     }
   })();
 
-  const previousRRHostT = await getTranslation(previousRRHost?.locale || "en", "common");
+  const previousRRHostT = await getTranslation(previousRRHost?.locale || "es", "common");
 
   // Filter out the current attendees of the booking from the event type
   const availableEventTypeUsers = eventType.hosts.reduce((availableUsers, host) => {
@@ -142,12 +142,12 @@ export const roundRobinReassignment = async ({
 
   const hasOrganizerChanged = !previousRRHost || booking.userId === previousRRHost?.id;
   const organizer = hasOrganizerChanged ? reassignedRRHost : booking.user;
-  const organizerT = await getTranslation(organizer?.locale || "en", "common");
+  const organizerT = await getTranslation(organizer?.locale || "es", "common");
 
   const currentBookingTitle = booking.title;
   let newBookingTitle = currentBookingTitle;
 
-  const reassignedRRHostT = await getTranslation(reassignedRRHost.locale || "en", "common");
+  const reassignedRRHostT = await getTranslation(reassignedRRHost.locale || "es", "common");
 
   const teamMembers = await getTeamMembers({
     eventTypeHosts: eventType.hosts,
@@ -168,11 +168,11 @@ export const roundRobinReassignment = async ({
     }
 
     attendeePromises.push(
-      getTranslation(attendee.locale ?? "en", "common").then((tAttendee) => ({
+      getTranslation(attendee.locale ?? "es", "common").then((tAttendee) => ({
         email: attendee.email,
         name: attendee.name,
         timeZone: attendee.timeZone,
-        language: { translate: tAttendee, locale: attendee.locale ?? "en" },
+        language: { translate: tAttendee, locale: attendee.locale ?? "es" },
         phoneNumber: attendee.phoneNumber || undefined,
       }))
     );
@@ -271,7 +271,7 @@ export const roundRobinReassignment = async ({
       name: organizer.name || "",
       email: organizer.email,
       language: {
-        locale: organizer.locale || "en",
+        locale: organizer.locale || "es",
         translate: organizerT,
       },
       timeZone: organizer.timeZone,
@@ -339,7 +339,7 @@ export const roundRobinReassignment = async ({
           name: reassignedRRHost.name || "",
           username: reassignedRRHost.username || "",
           timeFormat: getTimeFormatStringFromUserTimeFormat(reassignedRRHost.timeFormat),
-          language: { translate: reassignedRRHostT, locale: reassignedRRHost.locale || "en" },
+          language: { translate: reassignedRRHostT, locale: reassignedRRHost.locale || "es" },
         },
       ],
     });
@@ -355,7 +355,7 @@ export const roundRobinReassignment = async ({
         name: previousRRHost.name || "",
         email: previousRRHost.email,
         language: {
-          locale: previousRRHost.locale || "en",
+          locale: previousRRHost.locale || "es",
           translate: previousRRHostT,
         },
         timeZone: previousRRHost.timeZone,
@@ -372,7 +372,7 @@ export const roundRobinReassignment = async ({
         email: previousRRHost.email,
         name: previousRRHost.name || "",
         timeZone: previousRRHost.timeZone,
-        language: { translate: previousRRHostT, locale: previousRRHost.locale || "en" },
+        language: { translate: previousRRHostT, locale: previousRRHost.locale || "es" },
       });
     }
 
@@ -385,7 +385,7 @@ export const roundRobinReassignment = async ({
             name: previousRRHost.name || "",
             username: previousRRHost.username || "",
             timeFormat: getTimeFormatStringFromUserTimeFormat(previousRRHost.timeFormat),
-            language: { translate: previousRRHostT, locale: previousRRHost.locale || "en" },
+            language: { translate: previousRRHostT, locale: previousRRHost.locale || "es" },
           },
         ],
         eventType?.metadata as EventTypeMetadata,

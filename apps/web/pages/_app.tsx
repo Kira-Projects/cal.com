@@ -40,7 +40,7 @@ declare global {
 MyApp.getInitialProps = async (ctx: AppContextType) => {
   const { req } = ctx.ctx;
 
-  let newLocale = "en";
+  let newLocale = "es";
 
   if (req) {
     const { getLocale } = await import("@calcom/features/auth/lib/getLocale");

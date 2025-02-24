@@ -24,7 +24,7 @@ const preview: Preview = {
     },
 
     globals: {
-      locale: "en",
+      locale: "es",
       locales: {
         en: "English",
         fr: "Français",

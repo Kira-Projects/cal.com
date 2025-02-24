@@ -22,7 +22,7 @@ type GetResponseWithFormFieldsOptions = {
 async function getResponseWithFormFieldsHandler({ ctx, input }: GetResponseWithFormFieldsOptions) {
   const { user } = ctx;
   const { formResponseId } = input;
-  const translate = await getTranslation(user.locale ?? "en", "common");
+  const translate = await getTranslation(user.locale ?? "es", "common");
 
   const formResponse = await prisma.app_RoutingForms_FormResponse.findUnique({
     where: {
