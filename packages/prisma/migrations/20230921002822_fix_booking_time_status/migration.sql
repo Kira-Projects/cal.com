@@ -1,8 +1,8 @@
--- View: public.BookingsTimeStatus
+-- View: agendix.BookingsTimeStatus
 
--- DROP VIEW public."BookingsTimeStatus";
+-- DROP VIEW agendix."BookingsTimeStatus";
 
-CREATE OR REPLACE VIEW public."BookingTimeStatus"
+CREATE OR REPLACE VIEW agendix."BookingTimeStatus"
  AS
  SELECT "Booking".id,
     "Booking".uid,
