@@ -1,8 +1,6 @@
 import type { SessionContextValue } from "next-auth/react";
-import Link from "next/link";
 
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { TopBanner } from "@calcom/ui";
 
 export type AdminPasswordBannerProps = { data: SessionContextValue["data"] };
 
@@ -13,7 +11,7 @@ function AdminPasswordBanner({ data }: AdminPasswordBannerProps) {
 
   return (
     <>
-      <TopBanner
+      {/* <TopBanner
         text={t("invalid_admin_password", { user: data.user.username })}
         variant="warning"
         actions={
@@ -21,7 +19,7 @@ function AdminPasswordBanner({ data }: AdminPasswordBannerProps) {
             {t("change_password_admin")}
           </Link>
         }
-      />
+      /> */}
     </>
   );
 }

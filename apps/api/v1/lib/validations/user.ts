@@ -21,7 +21,7 @@ enum weekdays {
 
 // @note: extracted from apps/web/next-i18next.config.js, update if new locales.
 enum locales {
-  EN = "en",
+  EN = "es",
   FR = "fr",
   IT = "it",
   RU = "ru",

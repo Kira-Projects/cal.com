@@ -26,6 +26,16 @@ const NavTabs = function ({
   iconClassName,
   ...props
 }: NavTabProps) {
+  const filtered = tabs.filter(
+    (tab) =>
+      ![
+        "/event-types/1151?tabName=recurring",
+        "/event-types/1151?tabName=apps",
+        "/event-types/1151?tabName=workflows",
+        "/event-types/1151?tabName=webhooks",
+      ].includes(tab.href)
+  );
+
   return (
     <nav
       className={classNames(
@@ -40,7 +50,7 @@ const NavTabs = function ({
       {/* padding top for sticky */}
       {sticky && <div className="pt-6" />}
       {props.children}
-      {tabs.map((tab, idx) => (
+      {filtered.map((tab, idx) => (
         <VerticalTabItem
           {...tab}
           key={idx}
