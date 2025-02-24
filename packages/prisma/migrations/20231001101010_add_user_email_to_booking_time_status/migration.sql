@@ -2,7 +2,7 @@
 
 -- DROP VIEW agendix."BookingTimeStatus";
 
-CREATE OR REPLACE VIEW public."BookingTimeStatus"
+CREATE OR REPLACE VIEW agendix."BookingTimeStatus"
  AS
  SELECT "Booking".id,
     "Booking".uid,

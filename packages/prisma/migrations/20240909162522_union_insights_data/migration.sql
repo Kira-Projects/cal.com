@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public."BookingTimeStatus"
+CREATE OR REPLACE VIEW agendix."BookingTimeStatus"
 AS
 SELECT
     "Booking".id,
