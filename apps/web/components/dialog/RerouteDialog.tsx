@@ -410,7 +410,7 @@ const NewRoutingManager = ({
       return {
         responses: booking.responses,
         timeZone: booker.timeZone,
-        language: booker.locale || "en",
+        language: booker.locale || "es",
         metadata: booking.metadata || {},
         ...getBookingSeatFields(),
         ...getHashedLinkFields(),

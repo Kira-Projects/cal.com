@@ -6,8 +6,8 @@ import { IsString, IsOptional, IsBoolean, IsEnum } from "class-validator";
 export class CreateOrganizationUserInput extends CreateUserInput {
   @IsOptional()
   @IsString()
-  @ApiPropertyOptional({ type: String, default: "en" })
-  locale = "en";
+  @ApiPropertyOptional({ type: String, default: "es" })
+  locale = "es";
 
   @IsOptional()
   @IsEnum(MembershipRole)

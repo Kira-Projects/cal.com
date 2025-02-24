@@ -33,10 +33,6 @@ const getInitialProps = async (url: string) => {
   const req = { headers: headers(), cookies: cookies() };
   const newLocale = await getLocale(req);
   const direction = dir(newLocale);
-
-  console.log("newLocale");
-  console.log(newLocale);
-
   return { isEmbed, embedColorScheme, locale: newLocale, direction };
 };
 

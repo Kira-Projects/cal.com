@@ -10,7 +10,7 @@ export function getBasicMockRequestDataForBooking() {
     end: `${getDate({ dateIncrement: 1 }).dateString}T04:30:00.000Z`,
     eventTypeSlug: "no-confirmation",
     timeZone: DEFAULT_TIMEZONE_BOOKER,
-    language: "en",
+    language: "es",
     user: "teampro",
     metadata: {},
     hasHashedBookingLink: false,

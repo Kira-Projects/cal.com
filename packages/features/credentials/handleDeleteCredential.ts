@@ -307,7 +307,7 @@ const handleDeleteCredential = async ({
                 email: attendee.email,
                 timeZone: attendee.timeZone,
                 language: {
-                  translate: await getTranslation(attendee.locale ?? "en", "common"),
+                  translate: await getTranslation(attendee.locale ?? "es", "common"),
                   locale: attendee.locale ?? "en",
                 },
               };

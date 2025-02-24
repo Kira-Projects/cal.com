@@ -6,7 +6,7 @@ import { getTranslation } from "@calcom/lib/server/i18n";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (IS_PRODUCTION) return res.write("Only for development purposes"), res.end();
-  const t = await getTranslation("en", "common");
+  const t = await getTranslation("es", "common");
 
   res.statusCode = 200;
 

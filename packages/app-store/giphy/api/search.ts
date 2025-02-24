@@ -30,7 +30,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         locale: true,
       },
     });
-    const locale = user?.locale || "en";
+    const locale = user?.locale || "es";
     const { keyword, offset } = req.body;
     const { gifImageUrl, total } = await GiphyManager.searchGiphy(locale, keyword, offset);
     return res.status(200).json({

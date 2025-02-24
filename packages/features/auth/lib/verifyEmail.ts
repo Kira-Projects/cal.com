@@ -32,7 +32,7 @@ export const sendEmailVerification = async ({
   isPlatform = false,
 }: VerifyEmailType) => {
   const token = randomBytes(32).toString("hex");
-  const translation = await getTranslation(language ?? "en", "common");
+  const translation = await getTranslation(language ?? "es", "common");
   const emailVerification = await getFeatureFlag(prisma, "email-verification");
 
   if (!emailVerification) {
@@ -82,7 +82,7 @@ export const sendEmailVerificationByCode = async ({
   username,
   isVerifyingEmail,
 }: VerifyEmailType) => {
-  const translation = await getTranslation(language ?? "en", "common");
+  const translation = await getTranslation(language ?? "es", "common");
   const secret = createHash("md5")
     .update(email + process.env.CALENDSO_ENCRYPTION_KEY)
     .digest("hex");
@@ -114,7 +114,7 @@ interface ChangeOfEmail {
 
 export const sendChangeOfEmailVerification = async ({ user, language }: ChangeOfEmail) => {
   const token = randomBytes(32).toString("hex");
-  const translation = await getTranslation(language ?? "en", "common");
+  const translation = await getTranslation(language ?? "es", "common");
   const emailVerification = await getFeatureFlag(prisma, "email-verification");
 
   if (!emailVerification) {

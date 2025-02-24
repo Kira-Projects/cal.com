@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, writeFileSync } from "fs";
 import { join } from "path";
 
-const TEMPLATE_LANGUAGE = "en";
+const TEMPLATE_LANGUAGE = "es";
 const SPECIFIC_LOCALES = process.argv.slice(2) || [];
 const LOCALES_PATH = join(__dirname, "../public/static/locales");
 

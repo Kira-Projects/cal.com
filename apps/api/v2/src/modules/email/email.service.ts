@@ -17,7 +17,7 @@ export class EmailService {
     locale: string | null;
     inviterName: string;
   }) {
-    const translation = await getTranslation(locale || "en", "common");
+    const translation = await getTranslation(locale || "es", "common");
 
     await sendSignupToOrganizationEmail({
       usernameOrEmail,

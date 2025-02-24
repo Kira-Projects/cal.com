@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const ns = ["common"];
-const supportedLngs = ["en", "fr"];
+const supportedLngs = ["es", "fr"];
 const resources = ns.reduce((acc, n) => {
   supportedLngs.forEach((lng) => {
     if (!acc[lng]) acc[lng] = {};
@@ -16,7 +16,7 @@ const resources = ns.reduce((acc, n) => {
 
 i18n.use(initReactI18next).init({
   debug: true,
-  fallbackLng: "en",
+  fallbackLng: "es",
   defaultNS: "common",
   ns,
   interpolation: {

@@ -109,13 +109,13 @@ async function cancelAttendeeSeat(
       // as integrations was already updated
     }
 
-    const tAttendees = await getTranslation(attendee.locale ?? "en", "common");
+    const tAttendees = await getTranslation(attendee.locale ?? "es", "common");
 
     await sendCancelledSeatEmailsAndSMS(
       evt,
       {
         ...attendee,
-        language: { translate: tAttendees, locale: attendee.locale ?? "en" },
+        language: { translate: tAttendees, locale: attendee.locale ?? "es" },
       },
       eventTypeMetadata
     );
@@ -126,8 +126,8 @@ async function cancelAttendeeSeat(
         {
           ...attendee,
           language: {
-            translate: await getTranslation(attendee.locale ?? "en", "common"),
-            locale: attendee.locale ?? "en",
+            translate: await getTranslation(attendee.locale ?? "es", "common"),
+            locale: attendee.locale ?? "es",
           },
         },
       ]

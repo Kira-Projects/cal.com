@@ -45,7 +45,7 @@ const createNewSeat = async (
   let resultBooking: HandleSeatsResultBooking;
   // Need to add translation for attendees to pass type checks. Since these values are never written to the db we can just use the new attendee language
   const bookingAttendees = seatedBooking.attendees.map((attendee) => {
-    return { ...attendee, language: { translate: tAttendees, locale: attendeeLanguage ?? "en" } };
+    return { ...attendee, language: { translate: tAttendees, locale: attendeeLanguage ?? "es" } };
   });
 
   evt = { ...evt, attendees: [...bookingAttendees, invitee[0]] };

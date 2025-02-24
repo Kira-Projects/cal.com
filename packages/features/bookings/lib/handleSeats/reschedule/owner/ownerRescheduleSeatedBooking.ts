@@ -28,7 +28,7 @@ const ownerRescheduleSeatedBooking = async (
         name: attendee.name,
         email: attendee.email,
         timeZone: attendee.timeZone,
-        language: { translate: tAttendees, locale: attendee.locale ?? "en" },
+        language: { translate: tAttendees, locale: attendee.locale ?? "es" },
       };
     }) ?? [];
 

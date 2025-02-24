@@ -110,12 +110,12 @@ export class CreateUserInput {
   @Expose()
   defaultScheduleId?: number;
 
-  @ApiProperty({ type: String, required: false, description: "Locale", example: "en", default: "en" })
+  @ApiProperty({ type: String, required: false, description: "Locale", example: "es", default: "es" })
   @IsOptional()
   @IsString()
   @Validate(LocaleValidator)
   @Expose()
-  locale?: string | null = "en";
+  locale?: string | null = "es";
 
   @ApiProperty({
     type: String,

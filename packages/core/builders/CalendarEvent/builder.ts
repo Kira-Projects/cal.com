@@ -170,8 +170,8 @@ export class CalendarEventBuilder implements ICalendarEventBuilder {
         name: user.name || "",
         timeZone: user.timeZone,
         language: {
-          translate: await getTranslation(user.locale ?? "en", "common"),
-          locale: user.locale ?? "en",
+          translate: await getTranslation(user.locale ?? "es", "common"),
+          locale: user.locale ?? "es",
         },
         locale: user.locale,
       } as PersonAttendeeCommonFields;
