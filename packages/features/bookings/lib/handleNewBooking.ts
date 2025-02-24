@@ -416,7 +416,7 @@ async function handler(
   }
 
   const fullName = getFullName(bookerName);
-  // Why are we only using "en" locale
+  // Why are we only using es locale
   const tGuests = await getTranslation("es", "common");
 
   const dynamicUserList = Array.isArray(reqBody.user) ? reqBody.user : getUsernameList(reqBody.user);

@@ -51,7 +51,7 @@ export const confirmHandler = async ({ ctx, input }: ConfirmOptions) => {
     platformClientParams,
   } = input;
 
-  const tOrganizer = await getTranslation(user.locale ?? "en", "common");
+  const tOrganizer = await getTranslation(user.locale ?? "es", "common");
 
   const booking = await prisma.booking.findUniqueOrThrow({
     where: {
@@ -152,7 +152,7 @@ export const confirmHandler = async ({ ctx, input }: ConfirmOptions) => {
   // Cache translations to avoid requesting multiple times.
   const translations = new Map();
   const attendeesListPromises = booking.attendees.map(async (attendee) => {
-    const locale = attendee.locale ?? "en";
+    const locale = attendee.locale ?? "es";
     let translate = translations.get(locale);
     if (!translate) {
       translate = await getTranslation(locale, "common");
@@ -203,7 +203,7 @@ export const confirmHandler = async ({ ctx, input }: ConfirmOptions) => {
       username: user.username || undefined,
       timeZone: user.timeZone,
       timeFormat: getTimeFormatStringFromUserTimeFormat(user.timeFormat),
-      language: { translate: tOrganizer, locale: user.locale ?? "en" },
+      language: { translate: tOrganizer, locale: user.locale ?? "es" },
     },
     attendees: attendeesList,
     location: booking.location ?? "",

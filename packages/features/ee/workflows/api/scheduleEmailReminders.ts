@@ -213,7 +213,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
               reminder.booking.attendees[0].timeZone
             ),
           };
-          const emailLocale = locale || "en";
+          const emailLocale = locale || "es";
           const emailSubject = customTemplate(
             reminder.workflowStep.emailSubject || "",
             variables,
@@ -240,7 +240,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         } else if (reminder.workflowStep.template === WorkflowTemplates.REMINDER) {
           emailContent = emailReminderTemplate(
             false,
-            reminder.booking.user?.locale || "en",
+            reminder.booking.user?.locale || "es",
             reminder.workflowStep.action,
             getTimeFormatStringFromUserTimeFormat(reminder.booking.user?.timeFormat),
             reminder.booking.startTime.toISOString() || "",
@@ -266,7 +266,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           );
           emailContent = emailRatingTemplate({
             isEditingMode: true,
-            locale: reminder.booking.user?.locale || "en",
+            locale: reminder.booking.user?.locale || "es",
             action: reminder.workflowStep.action || WorkflowActions.EMAIL_ADDRESS,
             timeFormat: getTimeFormatStringFromUserTimeFormat(reminder.booking.user?.timeFormat),
             startTime: reminder.booking.startTime.toISOString() || "",
@@ -285,15 +285,15 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
           const booking = reminder.booking;
 
-          const t = await getTranslation(booking.user?.locale ?? "en", "common");
+          const t = await getTranslation(booking.user?.locale ?? "es", "common");
 
           const attendeePromises = [];
 
           for (const attendee of booking.attendees) {
             attendeePromises.push(
-              getTranslation(attendee.locale ?? "en", "common").then((tAttendee) => ({
+              getTranslation(attendee.locale ?? "es", "common").then((tAttendee) => ({
                 ...attendee,
-                language: { locale: attendee.locale ?? "en", translate: tAttendee },
+                language: { locale: attendee.locale ?? "es", translate: tAttendee },
               }))
             );
           }
@@ -309,7 +309,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
               name: booking.user?.name ?? "",
               email: booking.user?.email ?? "",
               timeZone: booking.user?.timeZone ?? "",
-              language: { translate: t, locale: booking.user?.locale ?? "en" },
+              language: { translate: t, locale: booking.user?.locale ?? "es" },
             },
             attendees,
           };
@@ -370,7 +370,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
         emailContent = emailReminderTemplate(
           false,
-          reminder.booking.user?.locale || "en",
+          reminder.booking.user?.locale || "es",
           WorkflowActions.EMAIL_ATTENDEE,
           getTimeFormatStringFromUserTimeFormat(reminder.booking.user?.timeFormat),
           reminder.booking.startTime.toISOString() || "",

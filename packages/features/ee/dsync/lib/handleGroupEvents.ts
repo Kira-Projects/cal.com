@@ -92,7 +92,7 @@ const handleGroupEvents = async (event: DirectorySyncEvent, organizationId: numb
     },
   });
 
-  const translation = await getTranslation("en", "common");
+  const translation = await getTranslation("es", "common");
 
   const newUserEmails = userEmails.filter((email) => !users.find((user) => user.email === email));
   // For each team linked to the dsync group name provision members
@@ -162,7 +162,7 @@ const handleGroupEvents = async (event: DirectorySyncEvent, organizationId: numb
 
     await Promise.all([
       ...newMembers.map(async (user) => {
-        const translation = await getTranslation(user.locale || "en", "common");
+        const translation = await getTranslation(user.locale || "es", "common");
         return sendExistingUserTeamInviteEmails({
           currentUserTeamName: group.team.name,
           existingUsersWithMemberships: [

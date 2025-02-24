@@ -196,7 +196,7 @@ async function handler(req: NextApiRequest) {
   const customInputs = getCustomInputsResponses(reqBody, eventType.customInputs);
   const attendeeTimezone = reqBody.timeZone;
   const attendeeLanguage = reqBody.language;
-  const tAttendees = await getTranslation(attendeeLanguage ?? "en", "common");
+  const tAttendees = await getTranslation(attendeeLanguage ?? "es", "common");
 
   const fullName = getFullName(bookerName);
 
@@ -205,7 +205,7 @@ async function handler(req: NextApiRequest) {
       email: bookerEmail,
       name: fullName,
       timeZone: attendeeTimezone,
-      locale: attendeeLanguage ?? "en",
+      locale: attendeeLanguage ?? "es",
     },
   ];
 
