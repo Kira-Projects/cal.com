@@ -4,10 +4,9 @@ import { shallow } from "zustand/shallow";
 import { useIsPlatform } from "@calcom/atoms/monorepo";
 import dayjs from "@calcom/dayjs";
 import { useIsEmbed } from "@calcom/embed-core/embed-iframe";
-import { WEBAPP_URL } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { BookerLayouts } from "@calcom/prisma/zod-utils";
-import { Button, ButtonGroup, Icon, ToggleGroup, Tooltip } from "@calcom/ui";
+import { Button, ButtonGroup, Icon, ToggleGroup } from "@calcom/ui";
 
 import { TimeFormatToggle } from "../../components/TimeFormatToggle";
 import { useBookerStore } from "../store";
@@ -58,7 +57,7 @@ export function Header({
   if (isMonthView) {
     return (
       <div className="flex gap-2">
-        {isMyLink && !isEmbed ? (
+        {/* {isMyLink && !isEmbed ? (
           <Tooltip content={t("troubleshooter_tooltip")} side="bottom">
             <Button
               color="primary"
@@ -69,7 +68,7 @@ export function Header({
           </Tooltip>
         ) : (
           renderOverlay?.()
-        )}
+        )} */}
         <LayoutToggleWithData
           layout={layout}
           enabledLayouts={enabledLayouts}
