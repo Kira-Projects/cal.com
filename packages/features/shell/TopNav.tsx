@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useIsEmbed } from "@calcom/embed-core/embed-iframe";
 // import { KBarTrigger } from "@calcom/features/kbar/Kbar";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { Icon, Logo } from "@calcom/ui";
+import { Icon } from "@calcom/ui";
 
 import { UserDropdown } from "./user-dropdown/UserDropdown";
 
@@ -23,7 +23,8 @@ function TopNav() {
         style={isEmbed ? { display: "none" } : {}}
         className="bg-muted border-subtle sticky top-0 z-40 flex w-full items-center justify-between border-b bg-opacity-50 px-4 py-1.5 backdrop-blur-lg sm:p-4 md:hidden">
         <Link href="/event-types">
-          <Logo />
+          {/* <Logo /> */}
+          Logo
         </Link>
         <div className="flex items-center gap-2 self-center">
           {/* <span className="hover:bg-muted hover:text-emphasis text-default group flex items-center rounded-full text-sm font-medium transition lg:hidden">
