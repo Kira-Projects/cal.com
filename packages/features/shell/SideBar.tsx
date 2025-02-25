@@ -11,7 +11,7 @@ import { getBookerBaseUrlSync } from "@calcom/lib/getBookerUrl/client";
 import { useCopy } from "@calcom/lib/hooks/useCopy";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { UserPermissionRole } from "@calcom/prisma/enums";
-import { Avatar, ButtonOrLink, Icon, SkeletonText, Tooltip, Logo, showToast } from "@calcom/ui";
+import { Avatar, ButtonOrLink, Icon, SkeletonText, Tooltip, showToast } from "@calcom/ui";
 
 // import { KBarTrigger } from "../kbar/Kbar";
 import { Navigation } from "./navigation/Navigation";
@@ -187,7 +187,8 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
           </header>
           {/* logo icon for tablet */}
           <Link href="/event-types" className="text-center md:inline lg:hidden">
-            <Logo small icon />
+            {/* <Logo small icon /> */}
+            Logo
           </Link>
           <Navigation isPlatformNavigation={isPlatformPages} />
         </div>
