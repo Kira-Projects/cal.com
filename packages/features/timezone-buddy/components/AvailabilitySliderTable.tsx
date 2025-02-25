@@ -7,7 +7,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import dayjs from "@calcom/dayjs";
 import { DataTable, DataTableToolbar } from "@calcom/features/data-table";
-import { APP_NAME, WEBAPP_URL } from "@calcom/lib/constants";
+import { APP_NAME } from "@calcom/lib/constants";
 import { CURRENT_TIMEZONE } from "@calcom/lib/constants";
 import type { DateRange } from "@calcom/lib/date-ranges";
 import { useDebounce } from "@calcom/lib/hooks/useDebounce";
@@ -50,10 +50,10 @@ function UpgradeTeamTip() {
       buttons={
         <div className="space-y-2 rtl:space-x-reverse sm:space-x-2">
           <ButtonGroup>
-            <Button color="primary" href={`${WEBAPP_URL}/settings/teams/new`}>
+            {/* <Button color="primary" href={`${WEBAPP_URL}/settings/teams/new`}>
               {t("create_team")}
-            </Button>
-            <Button color="minimal" href="https://go.cal.com/teams-video" target="_blank">
+            </Button> */}
+            <Button color="minimal" href="https://agendix.site/teams-video" target="_blank">
               {t("learn_more")}
             </Button>
           </ButtonGroup>

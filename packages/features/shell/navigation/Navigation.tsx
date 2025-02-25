@@ -33,16 +33,16 @@ const getNavigationItems = (orgBranding: OrganizationBranding): NavigationItemTy
     href: "/availability",
     icon: "clock",
   },
-  ...(orgBranding
-    ? [
-        {
-          name: "members",
-          href: `/settings/organizations/${orgBranding.slug}/members`,
-          icon: "building",
-          moreOnMobile: true,
-        } satisfies NavigationItemType,
-      ]
-    : []),
+  // ...(orgBranding
+  //   ? [
+  //       {
+  //         name: "members",
+  //         href: `/settings/organizations/${orgBranding.slug}/members`,
+  //         icon: "building",
+  //         moreOnMobile: true,
+  //       } satisfies NavigationItemType,
+  //     ]
+  //   : []),
   // {
   //   name: "teams",
   //   href: "/teams",
@@ -101,30 +101,30 @@ const getNavigationItems = (orgBranding: OrganizationBranding): NavigationItemTy
   //   icon: "zap",
   //   moreOnMobile: true,
   // },
-  {
-    name: "insights",
-    href: "/insights",
-    icon: "chart-bar",
-    isCurrent: ({ pathname: path, item }) => path?.startsWith(item.href) ?? false,
-    moreOnMobile: true,
-    child: [
-      {
-        name: "bookings",
-        href: "/insights",
-        isCurrent: ({ pathname: path }) => path == "/insights" ?? false,
-      },
-      // {
-      //   name: "routing",
-      //   href: "/insights/routing",
-      //   isCurrent: ({ pathname: path }) => path?.startsWith("/insights/routing") ?? false,
-      // },
-      // {
-      //   name: "router_position",
-      //   href: "/insights/virtual-queues",
-      //   isCurrent: ({ pathname: path }) => path?.startsWith("/insights/virtual-queues") ?? false,
-      // },
-    ],
-  },
+  // {
+  //   name: "insights",
+  //   href: "/insights",
+  //   icon: "chart-bar",
+  //   isCurrent: ({ pathname: path, item }) => path?.startsWith(item.href) ?? false,
+  //   moreOnMobile: true,
+  //   child: [
+  //     {
+  //       name: "bookings",
+  //       href: "/insights",
+  //       isCurrent: ({ pathname: path }) => path == "/insights" ?? false,
+  //     },
+  //     {
+  //       name: "routing",
+  //       href: "/insights/routing",
+  //       isCurrent: ({ pathname: path }) => path?.startsWith("/insights/routing") ?? false,
+  //     },
+  //     {
+  //       name: "router_position",
+  //       href: "/insights/virtual-queues",
+  //       isCurrent: ({ pathname: path }) => path?.startsWith("/insights/virtual-queues") ?? false,
+  //     },
+  //   ],
+  // },
 ];
 
 const platformNavigationItems: NavigationItemType[] = [

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { classNames } from "@calcom/lib";
-import { IS_CALCOM, ENABLE_PROFILE_SWITCHER } from "@calcom/lib/constants";
+import { ENABLE_PROFILE_SWITCHER } from "@calcom/lib/constants";
 import { getPlaceholderAvatar } from "@calcom/lib/defaultAvatarImage";
 import { getBookerBaseUrlSync } from "@calcom/lib/getBookerUrl/client";
 import { useCopy } from "@calcom/lib/hooks/useCopy";
@@ -79,40 +79,40 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
       },
       icon: "copy",
     },
-    IS_CALCOM
-      ? {
-          name: "copy_referral_link",
-          href: "",
-          onClick: (e: { preventDefault: () => void }) => {
-            e.preventDefault();
-            setIsReferalLoading(true);
-            // Create an artificial delay to show the loading state so it doesnt flicker if this request is fast
-            setTimeout(() => {
-              fetchAndCopyToClipboard(
-                fetch("/api/generate-referral-link", {
-                  method: "POST",
-                })
-                  .then((res) => res.json())
-                  .then((res) => res.shortLink),
-                {
-                  onSuccess: () => showToast(t("link_copied"), "success"),
-                  onFailure: () => showToast("Copy to clipboard failed", "error"),
-                }
-              );
-              setIsReferalLoading(false);
-            }, 1000);
-          },
-          icon: "gift",
-          isLoading: isReferalLoading,
-        }
-      : null,
-    isAdmin
-      ? {
-          name: "impersonation",
-          href: "/settings/admin/impersonation",
-          icon: "lock",
-        }
-      : null,
+    // IS_CALCOM
+    //   ? {
+    //       name: "copy_referral_link",
+    //       href: "",
+    //       onClick: (e: { preventDefault: () => void }) => {
+    //         e.preventDefault();
+    //         setIsReferalLoading(true);
+    //         // Create an artificial delay to show the loading state so it doesnt flicker if this request is fast
+    //         setTimeout(() => {
+    //           fetchAndCopyToClipboard(
+    //             fetch("/api/generate-referral-link", {
+    //               method: "POST",
+    //             })
+    //               .then((res) => res.json())
+    //               .then((res) => res.shortLink),
+    //             {
+    //               onSuccess: () => showToast(t("link_copied"), "success"),
+    //               onFailure: () => showToast("Copy to clipboard failed", "error"),
+    //             }
+    //           );
+    //           setIsReferalLoading(false);
+    //         }, 1000);
+    //       },
+    //       icon: "gift",
+    //       isLoading: isReferalLoading,
+    //     }
+    //   : null,
+    // isAdmin
+    //   ? {
+    //       name: "impersonation",
+    //       href: "/settings/admin/impersonation",
+    //       icon: "lock",
+    //     }
+    //   : null,
     {
       name: "settings",
       href: user?.org ? `/settings/organizations/profile` : "/settings/my-account/profile",

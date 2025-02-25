@@ -1,23 +1,23 @@
 ## Crear un tag anotado (recomendado) o un tag ligero
 ```bash
-git tag -a v1.0.5 -m "Version 1.0.5"
+git tag -a v1.0.6 -m "Version 1.0.6"
 ```
 
 ```bash
-git tag v1.0.5
+git tag v1.0.6
 ```
 
 ## Push tag to remote repo
 ```bash
-git push origin v1.0.5
+git push origin v1.0.6
 ```
 
 ## Eliminar un tag localmente:
 ```bash
-git tag -d v1.0.5
+git tag -d v1.0.6
 ```
 
 ## Eliminar un tag del remoto:
 ```bash
-git push origin --delete v1.0.5
+git push origin --delete v1.0.6
 ```

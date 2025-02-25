@@ -32,7 +32,7 @@ async function Error500({ searchParams }: { searchParams: { error?: string } }) 
             </pre>
           </div>
         )}
-        <Button href="mailto:support@cal.com">{t("contact_support")}</Button>
+        <Button href="mailto:leandrocode2785@gmail.com">{t("contact_support")}</Button>
         <Button color="secondary" href="javascript:history.back()" className="ml-2">
           {t("go_back")}
         </Button>

@@ -10,7 +10,7 @@ import { buildLegacyCtx } from "@lib/buildLegacyCtx";
 
 import { ssrInit } from "@server/lib/ssr";
 
-import EventTypes, { EventTypesCTA } from "~/event-types/views/event-types-listing-view";
+import EventTypes from "~/event-types/views/event-types-listing-view";
 
 export const generateMetadata = async () =>
   await _generateMetadata(
@@ -33,7 +33,7 @@ const Page = async ({ params, searchParams }: PageProps) => {
     <ShellMainAppDir
       heading={t("event_types_page_title")}
       subtitle={t("event_types_page_subtitle")}
-      CTA={<EventTypesCTA />}>
+      CTA={<div />}>
       <EventTypes />
     </ShellMainAppDir>
   );
