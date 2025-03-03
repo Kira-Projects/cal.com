@@ -188,7 +188,7 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
           {/* logo icon for tablet */}
           <Link href="/event-types" className="text-center md:inline lg:hidden">
             {/* <Logo small icon /> */}
-            Logo
+            Agendix.site
           </Link>
           <Navigation isPlatformNavigation={isPlatformPages} />
         </div>
