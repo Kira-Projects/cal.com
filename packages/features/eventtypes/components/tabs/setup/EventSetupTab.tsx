@@ -1,19 +1,17 @@
 import { useState } from "react";
-import { Controller, useFormContext } from "react-hook-form";
-import type { UseFormGetValues, UseFormSetValue, Control, FormState } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import type { MultiValue } from "react-select";
 
 import { useIsPlatform } from "@calcom/atoms/monorepo";
 import useLockedFieldsManager from "@calcom/features/ee/managed-event-types/hooks/useLockedFieldsManager";
 import type { LocationCustomClassNames } from "@calcom/features/eventtypes/components/Locations";
-import Locations from "@calcom/features/eventtypes/components/Locations";
 import type {
   EventTypeSetupProps,
   InputClassNames,
   SelectClassNames,
   SettingsToggleClassNames,
 } from "@calcom/features/eventtypes/lib/types";
-import type { FormValues, LocationFormValues } from "@calcom/features/eventtypes/lib/types";
+import type { FormValues } from "@calcom/features/eventtypes/lib/types";
 import { classNames } from "@calcom/lib";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { md } from "@calcom/lib/markdownIt";
@@ -142,7 +140,7 @@ export const EventSetupTab = (
               </>
             )}
           </div>
-          {!isPlatform && (
+          {/* {!isPlatform && (
             <div className="[&_label]:my-1 [&_label]:font-normal">
               <SettingsToggle
                 title={t("translate_description_button")}
@@ -154,7 +152,7 @@ export const EventSetupTab = (
                 tooltip={!orgId ? t("orgs_upgrade_to_enable_feature") : undefined}
               />
             </div>
-          )}
+          )} */}
           <TextField
             required
             label={isPlatform ? "Slug" : t("URL")}
@@ -325,7 +323,7 @@ export const EventSetupTab = (
             </div>
           )}
         </div>
-        <div
+        {/* <div
           className={classNames(
             "border-subtle rounded-lg border p-6",
             customClassNames?.locationSection?.container
@@ -337,8 +335,6 @@ export const EventSetupTab = (
               htmlFor="locations"
               className={customClassNames?.locationSection?.label}>
               {t("location")}
-              {/*improve shouldLockIndicator function to also accept eventType and then conditionally render
-              based on Managed Event type or not.*/}
               {shouldLockIndicator("locations")}
             </Skeleton>
             <Controller
@@ -361,7 +357,7 @@ export const EventSetupTab = (
               )}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
