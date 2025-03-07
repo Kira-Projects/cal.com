@@ -180,11 +180,13 @@ const Locations: React.FC<LocationsProps> = ({
                 placeholder={t(eventLocationType.organizerInputPlaceholder || "")}
                 type="text"
                 required
-                onChange={onChange}
+                onChange={(e) => {
+                  e.preventDefault(); // Prevenir comportamiento por defecto
+                  onChange(e); // Llamar al onChange original
+                }}
                 value={value}
                 {...(disableLocationProp ? { disabled: true } : {})}
                 className={classNames("my-0", customClassNames?.addressInput)}
-                {...rest}
               />
             );
           }}
