@@ -1,5 +1,4 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import { ErrorMessage } from "@hookform/error-message";
 import { Trans } from "next-i18next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -14,7 +13,6 @@ import type {
   EventTypeSetupProps,
   CheckboxClassNames,
 } from "@calcom/features/eventtypes/lib/types";
-import CheckboxField from "@calcom/features/form/components/CheckboxField";
 import type {
   LocationSelectCustomClassNames,
   SingleValueLocationOption,
@@ -328,7 +326,7 @@ const Locations: React.FC<LocationsProps> = ({
                 )}
               </div>
 
-              {eventLocationType?.organizerInputType && (
+              {/* {eventLocationType?.organizerInputType && (
                 <div className="mt-2 space-y-2">
                   <div className="w-full">
                     <div className="flex gap-2">
@@ -381,7 +379,7 @@ const Locations: React.FC<LocationsProps> = ({
                     />
                   </div>
                 </div>
-              )}
+              )} */}
             </li>
           );
         })}
@@ -476,7 +474,7 @@ const Locations: React.FC<LocationsProps> = ({
           </li>
         )}
       </ul>
-      {props.showAppStoreLink && !isPlatorm && (
+      {/* {props.showAppStoreLink && !isPlatorm && (
         <p className="text-default mt-2 text-sm">
           <Trans i18nKey="cant_find_the_right_conferencing_app_visit_our_app_store">
             Can&apos;t find the right conferencing app? Visit our
@@ -486,7 +484,7 @@ const Locations: React.FC<LocationsProps> = ({
             .
           </Trans>
         </p>
-      )}
+      )} */}
     </div>
   );
 };
