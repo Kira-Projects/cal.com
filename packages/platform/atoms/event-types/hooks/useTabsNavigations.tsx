@@ -81,15 +81,15 @@ export const useTabsNavigations = ({
       availability,
     });
 
-    if (!requirePayment) {
-      navigation.splice(3, 0, {
-        name: t("recurring"),
-        href: `/event-types/${formMethods.getValues("id")}?tabName=recurring`,
-        icon: "repeat",
-        info: t(`recurring_event_tab_description`),
-        "data-testid": "recurring",
-      });
-    }
+    // if (!requirePayment) {
+    //   navigation.splice(3, 0, {
+    //     name: t("recurring"),
+    //     href: `/event-types/${formMethods.getValues("id")}?tabName=recurring`,
+    //     icon: "repeat",
+    //     info: t(`recurring_event_tab_description`),
+    //     "data-testid": "recurring",
+    //   });
+    // }
     navigation.splice(1, 0, {
       name: t("availability"),
       href: `/event-types/${formMethods.getValues("id")}?tabName=availability`,
@@ -215,20 +215,20 @@ function getNavigation({
       info: t(`event_advanced_tab_description`),
       "data-testid": "event_advanced_tab_title",
     },
-    {
-      name: t("apps"),
-      href: `/event-types/${id}?tabName=apps`,
-      icon: "grid-3x3",
-      //TODO: Handle proper translation with count handling
-      info: `${installedAppsNumber} apps, ${enabledAppsNumber} ${t("active")}`,
-      "data-testid": "apps",
-    },
-    {
-      name: t("workflows"),
-      href: `/event-types/${id}?tabName=workflows`,
-      icon: "zap",
-      info: `${enabledWorkflowsNumber} ${t("active")}`,
-      "data-testid": "workflows",
-    },
+    // {
+    //   name: t("apps"),
+    //   href: `/event-types/${id}?tabName=apps`,
+    //   icon: "grid-3x3",
+    //   //TODO: Handle proper translation with count handling
+    //   info: `${installedAppsNumber} apps, ${enabledAppsNumber} ${t("active")}`,
+    //   "data-testid": "apps",
+    // },
+    // {
+    //   name: t("workflows"),
+    //   href: `/event-types/${id}?tabName=workflows`,
+    //   icon: "zap",
+    //   info: `${enabledWorkflowsNumber} ${t("active")}`,
+    //   "data-testid": "workflows",
+    // },
   ] satisfies VerticalTabItemProps[];
 }
